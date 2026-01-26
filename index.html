@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moolah | Стратегический партнёр для маркетплейсов</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        accent: {
+                            400: '#34d399', // Emerald 400
+                            500: '#10b981', // Emerald 500
+                            900: '#064e3b', // Emerald 900
+                        }
+                    },
+                    animation: {
+                        'float': 'float 10s ease-in-out infinite',
+                        'spin-slow': 'spin 20s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #020617; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #334155; 
+        }
+        
+        /* DNA Animation & Glow */
+        .dna-strand {
+            stroke-dasharray: 5000;
+            stroke-dashoffset: 5000;
+            animation: dash 5s linear forwards, pulse-path 4s ease-in-out infinite alternate;
+        }
+        
+        @keyframes dash {
+            to { stroke-dashoffset: 0; }
+        }
+        
+        @keyframes pulse-path {
+            from { stroke-opacity: 0.3; }
+            to { stroke-opacity: 0.8; }
+        }
+
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+        .glow-blob {
+            animation: pulse-slow 8s infinite ease-in-out;
+        }
+        
+        /* Form inputs focus reset */
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(52, 211, 153, 0.2);
+        }
+
+        /* Molecular Background Pattern */
+        .molecule-bg {
+            background-image: radial-gradient(rgba(52, 211, 153, 0.15) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* Slider Styles */
+        .slider-container {
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+        }
+        .slider-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            gap: 24px; /* gap-6 equivalent */
+        }
+        .slide-item {
+            flex: 0 0 100%; /* Mobile: 1 item per view */
+            min-width: 0;
+        }
+        @media (min-width: 768px) {
+            .slide-item {
+                flex: 0 0 calc(50% - 12px); /* Tablet: 2 items */
+            }
+        }
+        @media (min-width: 1024px) {
+            .slide-item {
+                flex: 0 0 calc(33.333% - 16px); /* Desktop: 3 items */
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-300 font-sans antialiased selection:bg-accent-500 selection:text-white relative overflow-x-hidden">
+
+    <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <div class="absolute inset-0 molecule-bg opacity-20 mask-image:linear-gradient(to_bottom,black,transparent)"></div>
+        <div class="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-accent-900/20 rounded-full blur-[120px] mix-blend-screen"></div>
+        <div class="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-900/20 rounded-full blur-[100px] mix-blend-screen"></div>
+        <svg class="absolute top-0 right-0 h-[120vh] w-full md:w-2/3 opacity-30 text-accent-500/30 transform translate-x-1/4 -translate-y-12" viewBox="0 0 800 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M400 0 C550 100 550 300 400 400 C250 500 250 700 400 800 C550 900 550 1100 400 1200" stroke="url(#paint0_linear)" stroke-width="2" class="dna-strand"></path>
+            <path d="M400 0 C250 100 250 300 400 400 C550 500 550 700 400 800 C250 900 250 1100 400 1200" stroke="url(#paint1_linear)" stroke-width="2" class="dna-strand" style="animation-delay: 0.5s"></path>
+            <g class="opacity-40">
+                <!-- Виток 1 - первая пара точек (без задержки) -->
+                <line x1="400" y1="133" x2="400" y2="133" stroke="currentColor" stroke-width="1">
+                    <animate attributeName="x1" values="320;480;320" dur="10s" repeatCount="indefinite"></animate>
+                    <animate attributeName="x2" values="480;320;480" dur="10s" repeatCount="indefinite"></animate>
+                </line>
+                <circle cx="400" cy="133" r="3" fill="#34d399">
+                    <animate attributeName="cx" values="320;480;320" dur="10s" repeatCount="indefinite"></animate>
+                </circle>
+                <circle cx="400" cy="133" r="3" fill="#34d399">
+                    <animate attributeName="cx" values="480;320;480" dur="10s" repeatCount="indefinite"></animate>
+                </circle>
+
+                <!-- Виток 1 - вторая пара точек (без задержки) -->
+                <line x1="400" y1="267" x2="400" y2="267" stroke="currentColor" stroke-width="1">
+                    <animate attributeName="x1" values="320;480;320" dur="10s" repeatCount="indefinite"></animate>
+                    <animate attributeName="x2" values="480;320;480" dur="10s" repeatCount="indefinite"></animate>
+                </line>
+                <circle cx="400" cy="267" r="3" fill="#34d399">
+                    <animate attributeName="cx" values="320;480;320" dur="10s" repeatCount="indefinite"></animate>
+                </circle>
+                <circle cx="400" cy="267" r="3" fill="#34d399">
+                    <animate attributeName="cx" values="480;320;480" dur="10s" repeatCount="indefinite"></animate>
+                </circle>
+
+                <!-- Виток 2 - первая пара точек (задержка 1.7s) -->
+                <line x1="400" y1="533" x2="400" y2="533" stroke="currentColor" stroke-width="1" style="opacity: 0">
+                    <animate attributeName="opacity" values="0;1" dur="0.1s" begin="1.7s" fill="freeze"></animate>
+                    <animate attributeName="x1" values="320;480;320" dur="10s" begin="1.7s" repeatCount="indefinite"></animate>
+                    <animate attributeName="x2" values="480;320;480" dur="10s" begin="1.7s" repeatCount="indefinite"></animate>
+                </line>
+                <circle cx="400" cy="533" r="3" fill="#34d399" style="opacity: 0">
+                    <animate attributeName="opacity" values="0;1" dur="0.1s" begin="1.7s" fill="freeze"></animate>
+                    <animate attributeName="cx" values="320;480;320" dur="10s" begin="1.7s" repeatCount="indefinite"></animate>
+                </circle>
+                <circle cx="400" cy="533" r="3" fill="#34d399" style="opacity: 0">
+                    <animate attributeName="opacity" values="0;1" dur="0.1s" begin="1.7s" fill="freeze"></animate>
+                    <animate attributeName="cx" values="480;320;480" dur="10s" begin="1.7s" repeatCount="indefinite"></animate>
+                </circle>
+
+                <!-- Виток 2 - вторая пара точек (задержка 1.7s) -->
+                <line x1="400" y1="667" x2="400" y2="667" stroke="currentColor" stroke-width="1" style="opacity: 0">
+                    <animate attributeName="opacity" values="0;1" dur="0.1s" begin="1.7s" fill="freeze"></animate>
+                    <animate attributeName="x1" values="320;480;320" dur="10s" begin="1.7s" repeatCount="indefinite"></animate>
+                    <animate attributeName="x2" values="480;320;480" dur="10s" begin="1.7s" repeatCount="indefinite"></animate>
+                </line>
+                <circle cx="400" cy="667" r="3" fill="#34d399" style="opacity: 0">
+                    <animate attributeName="opacity" values="0;1" dur="0.1s" begin="1.7s" fill="freeze"></animate>
+                    <animate attributeName="cx" values="320;480;320" dur="10s" begin="1.7s" repeatCount="indefinite"></animate>
+                </circle>
+                <circle cx="400" cy="667" r="3" fill="#34d399" style="opacity: 0">
+                    <animate attributeName="opacity" values="0;1" dur="0.1s" begin="1.7s" fill="freeze"></animate>
+                    <animate attributeName="cx" values="480;320;480" dur="10s" begin="1.7s" repeatCount="indefinite"></animate>
+                </circle>
+
+                <!-- Виток 3 - первая пара точек (задержка 3.3s) -->
+                <line x1="400" y1="933" x2="400" y2="933" stroke="currentColor" stroke-width="1" style="opacity: 0">
+                    <animate attributeName="opacity" values="0;1" dur="0.1s" begin="3.3s" fill="freeze"></animate>
+                    <animate attributeName="x1" values="320;480;320" dur="10s" begin="3.3s" repeatCount="indefinite"></animate>
+                    <animate attributeName="x2" values="480;320;480" dur="10s" begin="3.3s" repeatCount="indefinite"></animate>
+                </line>
+                <circle cx="400" cy="933" r="3" fill="#34d399" style="opacity: 0">
+                    <animate attributeName="opacity" values="0;1" dur="0.1s" begin="3.3s" fill="freeze"></animate>
+                    <animate attributeName="cx" values="320;480;320" dur="10s" begin="3.3s" repeatCount="indefinite"></animate>
+                </circle>
+                <circle cx="400" cy="933" r="3" fill="#34d399" style="opacity: 0">
+                    <animate attributeName="opacity" values="0;1" dur="0.1s" begin="3.3s" fill="freeze"></animate>
+                    <animate attributeName="cx" values="480;320;480" dur="10s" begin="3.3s" repeatCount="indefinite"></animate>
+                </circle>
+
+                <!-- Виток 3 - вторая пара точек (задержка 3.3s) -->
+                <line x1="400" y1="1067" x2="400" y2="1067" stroke="currentColor" stroke-width="1" style="opacity: 0">
+                    <animate attributeName="opacity" values="0;1" dur="0.1s" begin="3.3s" fill="freeze"></animate>
+                    <animate attributeName="x1" values="320;480;320" dur="10s" begin="3.3s" repeatCount="indefinite"></animate>
+                    <animate attributeName="x2" values="480;320;480" dur="10s" begin="3.3s" repeatCount="indefinite"></animate>
+                </line>
+                <circle cx="400" cy="1067" r="3" fill="#34d399" style="opacity: 0">
+                    <animate attributeName="opacity" values="0;1" dur="0.1s" begin="3.3s" fill="freeze"></animate>
+                    <animate attributeName="cx" values="320;480;320" dur="10s" begin="3.3s" repeatCount="indefinite"></animate>
+                </circle>
+                <circle cx="400" cy="1067" r="3" fill="#34d399" style="opacity: 0">
+                    <animate attributeName="opacity" values="0;1" dur="0.1s" begin="3.3s" fill="freeze"></animate>
+                    <animate attributeName="cx" values="480;320;480" dur="10s" begin="3.3s" repeatCount="indefinite"></animate>
+                </circle>
+            </g>
+            <defs>
+                <linearGradient id="paint0_linear" x1="400" y1="0" x2="400" y2="1200" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#34d399" stop-opacity="0"></stop>
+                    <stop offset="0.5" stop-color="#34d399"></stop>
+                    <stop offset="1" stop-color="#34d399" stop-opacity="0"></stop>
+                </linearGradient>
+                <linearGradient id="paint1_linear" x1="400" y1="0" x2="400" y2="1200" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#10b981" stop-opacity="0"></stop>
+                    <stop offset="0.5" stop-color="#10b981"></stop>
+                    <stop offset="1" stop-color="#10b981" stop-opacity="0"></stop>
+                </linearGradient>
+            </defs>
+        </svg>
+        <div class="absolute top-1/4 left-10 w-2 h-2 bg-accent-400 rounded-full blur-[1px] animate-float opacity-40"></div>
+        <div class="absolute top-1/3 left-1/4 w-1 h-1 bg-white rounded-full blur-[0px] animate-float opacity-30" style="animation-delay: 2s"></div>
+        <div class="absolute bottom-1/3 right-10 w-3 h-3 bg-blue-400 rounded-full blur-[2px] animate-float opacity-30" style="animation-delay: 4s"></div>
+    </div>
+
+    <nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-slate-950/70 backdrop-blur-md supports-[backdrop-filter]:bg-slate-950/60">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="text-xl font-medium tracking-tighter text-white flex items-center gap-2 group">
+                <div class="relative">
+                     <iconify-icon icon="solar:molecular-bond-linear" class="text-accent-400 text-2xl group-hover:rotate-180 transition-transform duration-700"></iconify-icon>
+                     <div class="absolute inset-0 bg-accent-400 blur-lg opacity-20"></div>
+                </div>
+                MOOLAH
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#services" class="hover:text-white transition-colors">Услуги</a>
+                <a href="#cases" class="hover:text-white transition-colors">Кейсы</a>
+                <a href="#process" class="hover:text-white transition-colors">Процесс</a>
+                <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+            </div>
+            <a href="#contact" class="hidden md:flex items-center gap-2 bg-white/5 hover:bg-white/10 text-white text-xs font-medium py-2 px-4 rounded-full border border-white/10 transition-all group">
+                Связаться
+                <iconify-icon icon="solar:arrow-right-linear" class="group-hover:translate-x-1 transition-transform"></iconify-icon>
+            </a>
+        </div>
+    </nav>
+
+    <section class="relative z-10 pt-32 pb-20 md:pt-48 md:pb-32 px-6">
+        <div class="max-w-7xl mx-auto text-center relative">
+            <div class="absolute left-1/2 -top-24 w-px h-24 bg-gradient-to-b from-transparent to-accent-500/50 -translate-x-1/2"></div>
+            
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-500/10 border border-accent-500/20 text-accent-400 text-xs font-medium mb-8 backdrop-blur-sm">
+                <span class="relative flex h-2 w-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-accent-500"></span>
+                </span>
+                Рост продаж на Wildberries и Ozon
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl lg:text-8xl tracking-tight font-medium text-white mb-8 leading-[1.1]">
+                Стратегический <br class="hidden md:block">
+                партнёр для <span class="relative inline-block">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-emerald-600 relative z-10">брендов</span>
+                    <svg class="absolute w-full h-3 -bottom-1 left-0 text-accent-500/30" viewBox="0 0 100 10" preserveAspectRatio="none">
+                         <path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="2" fill="none"></path>
+                    </svg>
+                </span>
+            </h1>
+
+            <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-12 font-light leading-relaxed">
+                Аналитика, финансы и управление продажами для кратного роста на маркетплейсах.
+            </p>
+
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4 mb-20">
+                <a href="#contact" class="w-full md:w-auto bg-accent-500 hover:bg-accent-400 text-slate-950 font-medium py-3 px-8 rounded-full transition-all flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(52,211,153,0.3)] hover:shadow-[0_0_30px_rgba(52,211,153,0.5)]">
+                    Получить бесплатный аудит
+                    <iconify-icon icon="solar:dialog-2-linear" class="text-xl"></iconify-icon>
+                </a>
+                <a href="#cases" class="w-full md:w-auto bg-slate-900/50 hover:bg-slate-800 text-white font-medium py-3 px-8 rounded-full border border-white/10 transition-all flex items-center justify-center gap-2 backdrop-blur-sm">
+                    Смотреть кейсы
+                </a>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 border-t border-white/10 pt-12 max-w-4xl mx-auto backdrop-blur-sm bg-slate-950/20 rounded-2xl p-6">
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-medium text-white tracking-tight mb-1">85+</div>
+                    <div class="text-xs text-slate-500 uppercase tracking-widest">Проектов</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-medium text-white tracking-tight mb-1">6 лет</div>
+                    <div class="text-xs text-slate-500 uppercase tracking-widest">Опыта</div>
+                </div>
+                <div class="col-span-2 md:col-span-1 text-center">
+                    <div class="text-3xl md:text-4xl font-medium text-white tracking-tight mb-1">3.5 млн ₽</div>
+                    <div class="text-xs text-slate-500 uppercase tracking-widest">Средняя выручка</div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Секция с примером аудита -->
+<section class="py-20 px-6 bg-slate-950/50">
+    <div class="max-w-7xl mx-auto">
+        <!-- Заголовок секции -->
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                Пример детального аудита
+            </h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">
+                Вот как выглядит реальный анализ магазина на маркетплейсах. Такой же отчёт вы получите бесплатно после заявки
+            </p>
+        </div>
+
+        <!-- Вкладки -->
+        <div class="audit-tabs">
+            <!-- Кнопки вкладок -->
+            <div class="flex flex-wrap gap-3 mb-8 justify-center">
+                <button class="tab-btn active" data-tab="finance">
+                    💰 Финансы
+                </button>
+                <button class="tab-btn" data-tab="content">
+                    🎨 Контент
+                </button>
+                <button class="tab-btn" data-tab="seo">
+                    🔍 SEO
+                </button>
+                <button class="tab-btn" data-tab="promo">
+                    📢 Реклама
+                </button>
+                <button class="tab-btn" data-tab="matrix">
+                    📦 Товарная матрица
+                </button>
+            </div>
+
+            <!-- Контент вкладки "Финансы" -->
+            <div class="tab-content active" id="finance">
+                <div class="bg-slate-900 border border-white/10 rounded-xl p-6 overflow-x-auto">
+                    <h3 class="text-xl font-semibold text-accent-500 mb-6">Финансовые показатели WB / Ozon</h3>
+                    
+                    <!-- Ключевые метрики карточками -->
+                    <div class="grid md:grid-cols-3 gap-4 mb-8">
+                        <div class="bg-slate-950 border border-accent-500/20 rounded-lg p-4">
+                            <div class="text-sm text-slate-400 mb-1">Оборот</div>
+                            <div class="text-2xl font-bold text-white">3.96 млн ₽</div>
+                            <div class="text-xs text-slate-500 mt-1">Ozon за декабрь</div>
+                        </div>
+                        <div class="bg-slate-950 border border-accent-500/20 rounded-lg p-4">
+                            <div class="text-sm text-slate-400 mb-1">Чистая прибыль</div>
+                            <div class="text-2xl font-bold text-accent-500">226K ₽</div>
+                            <div class="text-xs text-slate-500 mt-1">После всех расходов</div>
+                        </div>
+                        <div class="bg-slate-950 border border-accent-500/20 rounded-lg p-4">
+                            <div class="text-sm text-slate-400 mb-1">ROAS</div>
+                            <div class="text-2xl font-bold text-white">6.19</div>
+                            <div class="text-xs text-slate-500 mt-1">1₽ рекламы = 6₽ продаж</div>
+                        </div>
+                    </div>
+
+                    <!-- Детальная таблица (свёрнутая по умолчанию) -->
+                    <details class="cursor-pointer">
+                        <summary class="text-accent-500 hover:text-accent-400 font-medium mb-4 list-none flex items-center gap-2">
+                            <span class="text-xl">▶</span>
+                            <span>Показать полную таблицу</span>
+                        </summary>
+                        <div class="overflow-x-auto mt-4">
+                            <table class="audit-table w-full text-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Показатель</th>
+                                        <th>Wildberries</th>
+                                        <th>Ozon</th>
+                                        <th>Комментарий</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="font-medium">Оборот (Gross Revenue)</td>
+                                        <td>45 927 ₽</td>
+                                        <td>3 964 199 ₽</td>
+                                        <td class="text-slate-500 text-xs">Общая выручка без учета возвратов</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-medium">Комиссия маркетплейса</td>
+                                        <td>7 578 ₽</td>
+                                        <td>1 463 628 ₽</td>
+                                        <td class="text-slate-500 text-xs">~16-37% от оборота</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-medium">Маркетинговые расходы</td>
+                                        <td>0 ₽</td>
+                                        <td>640 376 ₽</td>
+                                        <td class="text-yellow-500 text-xs">⚠️ ДРР 17%, цель 10%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-medium">Чистая прибыль</td>
+                                        <td>—</td>
+                                        <td>226 751 ₽</td>
+                                        <td class="text-accent-500 text-xs">✓ Прибыльный бизнес</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-medium">Возвраты</td>
+                                        <td>80%</td>
+                                        <td>10%</td>
+                                        <td class="text-red-500 text-xs">⚠️ WB критично высокий</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <!-- Контент вкладки "Контент" -->
+            <div class="tab-content" id="content">
+                <div class="bg-slate-900 border border-white/10 rounded-xl p-6">
+                    <h3 class="text-xl font-semibold text-accent-500 mb-6">Аудит визуального контента</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 p-4 bg-slate-950 rounded-lg">
+                            <span class="text-2xl">📸</span>
+                            <div class="flex-1">
+                                <div class="font-medium text-white mb-1">Качество фото</div>
+                                <div class="text-sm text-slate-400 mb-2">Технически хорошо, но не выделяется среди конкурентов</div>
+                                <div class="inline-flex items-center gap-2 px-3 py-1 bg-yellow-500/10 text-yellow-500 rounded text-xs">
+                                    ⚠️ Требует улучшения
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 bg-slate-950 rounded-lg">
+                            <span class="text-2xl">🎬</span>
+                            <div class="flex-1">
+                                <div class="font-medium text-white mb-1">Видеоконтент</div>
+                                <div class="text-sm text-slate-400 mb-2">Отсутствует. Потеря значительной доли конверсии</div>
+                                <div class="inline-flex items-center gap-2 px-3 py-1 bg-red-500/10 text-red-500 rounded text-xs">
+                                    ✗ Критично
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 bg-slate-950 rounded-lg">
+                            <span class="text-2xl">📊</span>
+                            <div class="flex-1">
+                                <div class="font-medium text-white mb-1">Инфографика</div>
+                                <div class="text-sm text-slate-400 mb-2">Используется эпизодически без единого стиля</div>
+                                <div class="inline-flex items-center gap-2 px-3 py-1 bg-yellow-500/10 text-yellow-500 rounded text-xs">
+                                    ⚠️ Требует систематизации
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 bg-slate-950 rounded-lg">
+                            <span class="text-2xl">✅</span>
+                            <div class="flex-1">
+                                <div class="font-medium text-white mb-1">Детальные фото</div>
+                                <div class="text-sm text-slate-400 mb-2">Макроснимки текстур и деталей присутствуют</div>
+                                <div class="inline-flex items-center gap-2 px-3 py-1 bg-accent-500/10 text-accent-500 rounded text-xs">
+                                    ✓ Хорошо
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Контент вкладки "SEO" -->
+            <div class="tab-content" id="seo">
+                <div class="bg-slate-900 border border-white/10 rounded-xl p-6">
+                    <h3 class="text-xl font-semibold text-accent-500 mb-6">SEO и видимость</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-3">
+                            <div class="text-sm font-medium text-white mb-2">Что проверяем:</div>
+                            <div class="flex items-center gap-2 text-sm text-slate-400">
+                                <span class="w-2 h-2 bg-accent-500 rounded-full"></span>
+                                Семантическое ядро запросов
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-400">
+                                <span class="w-2 h-2 bg-accent-500 rounded-full"></span>
+                                Оптимизация заголовков
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-400">
+                                <span class="w-2 h-2 bg-accent-500 rounded-full"></span>
+                                Заполненность характеристик
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-400">
+                                <span class="w-2 h-2 bg-accent-500 rounded-full"></span>
+                                Позиции в выдаче
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-400">
+                                <span class="w-2 h-2 bg-accent-500 rounded-full"></span>
+                                Анализ конкурентов
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-950 border border-accent-500/20 rounded-lg p-4">
+                            <div class="text-sm text-slate-400 mb-3">Пример рекомендации:</div>
+                            <div class="text-sm text-white mb-2">
+                                "Добавить ВЧ-запросы в название, СЧ — в описание и характеристики. Структурировать текст с подзаголовками и списками"
+                            </div>
+                            <div class="text-xs text-accent-500 mt-3">
+                                → Повышает видимость на 30-40%
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Контент вкладки "Реклама" -->
+            <div class="tab-content" id="promo">
+                <div class="bg-slate-900 border border-white/10 rounded-xl p-6">
+                    <h3 class="text-xl font-semibold text-accent-500 mb-6">Эффективность рекламы</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div class="bg-slate-950 border border-green-500/20 rounded-lg p-4">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="text-2xl">🏆</span>
+                                <div class="text-sm text-slate-400">Лучший товар</div>
+                            </div>
+                            <div class="font-semibold text-white mb-1">Трос буксировочный 5т</div>
+                            <div class="text-xs text-slate-500 mb-2">ROAS: 4.6 (460% окупаемость)</div>
+                            <div class="text-sm text-accent-500">Расход: 44K → Выручка: 202K</div>
+                        </div>
+
+                        <div class="bg-slate-950 border border-red-500/20 rounded-lg p-4">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="text-2xl">⚠️</span>
+                                <div class="text-sm text-slate-400">Проблемные товары</div>
+                            </div>
+                            <div class="font-semibold text-white mb-1">Тюбинги</div>
+                            <div class="text-xs text-slate-500 mb-2">ROAS: 2-3 (убыточные)</div>
+                            <div class="text-sm text-red-500">Высокая конкуренция + CPC до 8₽</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-accent-500/5 border border-accent-500/20 rounded-lg p-4">
+                        <div class="font-medium text-white mb-2">Рекомендации:</div>
+                        <ul class="space-y-2 text-sm text-slate-400">
+                            <li class="flex items-start gap-2">
+                                <span class="text-accent-500 mt-0.5">→</span>
+                                <span>Снизить CAC для товаров с высокой стоимостью заказа</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-accent-500 mt-0.5">→</span>
+                                <span>Повысить CTR креативов в слабых кампаниях</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-accent-500 mt-0.5">→</span>
+                                <span>Увеличить конверсию из корзины в заказ</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Контент вкладки "Товарная матрица" -->
+            <div class="tab-content" id="matrix">
+                <div class="bg-slate-900 border border-white/10 rounded-xl p-6">
+                    <h3 class="text-xl font-semibold text-accent-500 mb-6">Анализ ассортимента</h3>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <div class="text-sm font-medium text-white mb-3">TOP-10 товаров Ozon:</div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-slate-950 border border-white/10 rounded text-sm text-slate-300">ТРС020</span>
+                                <span class="px-3 py-1 bg-slate-950 border border-white/10 rounded text-sm text-slate-300">ТС100т</span>
+                                <span class="px-3 py-1 bg-slate-950 border border-white/10 rounded text-sm text-slate-300">АНК021т</span>
+                                <span class="px-3 py-1 bg-slate-950 border border-white/10 rounded text-sm text-slate-300">ТР027т</span>
+                                <span class="px-3 py-1 bg-slate-950 border border-white/10 rounded text-sm text-slate-300">СТ021</span>
+                            </div>
+                            <div class="text-xs text-accent-500 mt-2">68% от общего оборота • 17 дней на продажу остатков</div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-slate-950 border border-yellow-500/20 rounded-lg p-4">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span>📦</span>
+                                    <span class="font-medium text-white">Оборачиваемость WB</span>
+                                </div>
+                                <div class="text-2xl font-bold text-yellow-500 mb-1">1883 дня</div>
+                                <div class="text-xs text-slate-500">Критически высокая • норма 45-60 дней</div>
+                            </div>
+
+                            <div class="bg-slate-950 border border-accent-500/20 rounded-lg p-4">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span>✅</span>
+                                    <span class="font-medium text-white">Оборачиваемость Ozon</span>
+                                </div>
+                                <div class="text-2xl font-bold text-accent-500 mb-1">41 день</div>
+                                <div class="text-xs text-slate-500">Отличный показатель</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-red-500/5 border border-red-500/20 rounded-lg p-4">
+                            <div class="font-medium text-white mb-2">⚠️ Неликвид:</div>
+                            <div class="text-sm text-slate-400 mb-2">WB: 30% товаров (431 единица) • Ozon: 3% (120 единиц)</div>
+                            <div class="text-xs text-red-400">Товары не продаются >90 дней → требуется распродажа</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA после примера -->
+        <div class="text-center mt-10">
+            <p class="text-slate-400 mb-4">Хотите получить такой же детальный анализ для вашего магазина?</p>
+            <a href="#form" class="inline-block bg-accent-500 hover:bg-accent-400 text-slate-950 font-semibold px-8 py-4 rounded-lg transition-colors">
+                Получить бесплатный аудит
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Стили для вкладок */
+.tab-btn {
+    background: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #cbd5e1;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+    background: #334155;
+    border-color: rgba(52, 211, 153, 0.3);
+}
+
+.tab-btn.active {
+    background: linear-gradient(135deg, #34d399, #10b981);
+    border-color: #34d399;
+    color: #0f172a;
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Стили для таблицы */
+.audit-table {
+    border-collapse: collapse;
+}
+
+.audit-table th {
+    background: linear-gradient(135deg, #34d399, #10b981);
+    color: #0f172a;
+    font-weight: 600;
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.audit-table td {
+    padding: 12px 16px;
+    color: #cbd5e1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.audit-table tbody tr:hover {
+    background: rgba(52, 211, 153, 0.05);
+}
+
+/* Анимация для details */
+details[open] summary span:first-child {
+    transform: rotate(90deg);
+    transition: transform 0.2s ease;
+}
+
+details summary span:first-child {
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+</style>
+
+<script>
+// Переключение вкладок
+document.addEventListener('DOMContentLoaded', function() {
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const targetTab = this.dataset.tab;
+
+            // Убираем активность со всех кнопок и контента
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            // Добавляем активность к выбранным
+            this.classList.add('active');
+            document.getElementById(targetTab).classList.add('active');
+        });
+    });
+});
+</script>
+
+
+    <section class="relative z-10 py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-2xl md:text-3xl font-medium text-white tracking-tight mb-12 flex items-center gap-3">
+                <iconify-icon icon="solar:atom-linear" class="text-accent-400"></iconify-icon>
+                Для кого мы работаем
+            </h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="group relative bg-slate-900/40 border border-white/10 p-8 rounded-2xl hover:border-accent-500/30 transition-all duration-300 backdrop-blur-sm">
+                    <div class="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
+                    <iconify-icon icon="solar:box-linear" class="text-4xl text-slate-400 mb-6 group-hover:text-accent-400 transition-colors"></iconify-icon>
+                    <h3 class="text-xl text-white font-medium mb-3">Дистрибьюторы</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Помогаем систематизировать ассортимент, настроить логистику и увеличить оборачиваемость товаров.
+                    </p>
+                </div>
+                <div class="group relative bg-slate-900/40 border border-white/10 p-8 rounded-2xl hover:border-accent-500/30 transition-all duration-300 backdrop-blur-sm">
+                    <div class="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
+                    <iconify-icon icon="solar:tag-price-linear" class="text-4xl text-slate-400 mb-6 group-hover:text-accent-400 transition-colors"></iconify-icon>
+                    <h3 class="text-xl text-white font-medium mb-3">Собственные бренды</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Строим сильное позиционирование, работаем с репутацией и выводим в топ категорий.
+                    </p>
+                </div>
+                <div class="group relative bg-slate-900/40 border border-white/10 p-8 rounded-2xl hover:border-accent-500/30 transition-all duration-300 backdrop-blur-sm">
+                    <div class="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
+                    <iconify-icon icon="solar:buildings-linear" class="text-4xl text-slate-400 mb-6 group-hover:text-accent-400 transition-colors"></iconify-icon>
+                    <h3 class="text-xl text-white font-medium mb-3">Производители</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Организуем прямой канал сбыта D2C, минуя посредников, с полным контролем цены.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cases" class="relative z-10 py-20 px-6 bg-slate-900/30 border-y border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-medium text-white tracking-tight mb-2">Результаты в цифрах</h2>
+                    <p class="text-slate-400 text-sm">Реальные кейсы наших партнеров</p>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <div class="bg-slate-950/80 border border-white/10 rounded-2xl p-8 flex flex-col justify-between hover:border-white/20 transition-colors backdrop-blur-sm">
+                    <div class="mb-8">
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="px-3 py-1 bg-blue-500/10 text-blue-400 text-xs rounded-full border border-blue-500/20">Товары для дома</span>
+                            <iconify-icon icon="solar:chart-2-bold" class="text-2xl text-slate-600"></iconify-icon>
+                        </div>
+                        <h3 class="text-2xl text-white font-medium mb-2">Рост выручки в 4.5 раза</h3>
+                        <p class="text-sm text-slate-400">Оптимизация SEO, переработка фотоконтента и настройка внутренней рекламы за 3 месяца.</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 border-t border-white/5 pt-6">
+                        <div>
+                            <div class="text-xs text-slate-500 mb-1">Было</div>
+                            <div class="text-lg text-slate-300">850 тыс. ₽</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-accent-400 mb-1">Стало</div>
+                            <div class="text-2xl text-white font-medium">3.8 млн ₽</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-950/80 border border-white/10 rounded-2xl p-8 flex flex-col justify-between hover:border-white/20 transition-colors backdrop-blur-sm">
+                    <div class="mb-8">
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="px-3 py-1 bg-purple-500/10 text-purple-400 text-xs rounded-full border border-purple-500/20">Одежда</span>
+                            <iconify-icon icon="solar:chart-2-bold" class="text-2xl text-slate-600"></iconify-icon>
+                        </div>
+                        <h3 class="text-2xl text-white font-medium mb-2">Выход в ТОП-10 категории</h3>
+                        <p class="text-sm text-slate-400">Комплексный маркетинг, работа с блогерами и управление складскими остатками.</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 border-t border-white/5 pt-6">
+                        <div>
+                            <div class="text-xs text-slate-500 mb-1">Было</div>
+                            <div class="text-lg text-slate-300">1.2 млн ₽</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-accent-400 mb-1">Стало</div>
+                            <div class="text-2xl text-white font-medium">5.1 млн ₽</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="relative z-10 py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-2xl md:text-3xl font-medium text-white tracking-tight mb-12 text-center">Комплексный подход</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
+                <div class="bg-slate-950/90 p-8 hover:bg-slate-900 transition-colors group backdrop-blur-sm">
+                    <iconify-icon icon="solar:pie-chart-2-linear" class="text-3xl text-accent-400 mb-4"></iconify-icon>
+                    <h3 class="text-lg text-white font-medium mb-2">Глубокая аналитика</h3>
+                    <p class="text-sm text-slate-400">Анализ ниши, конкурентов и Unit-экономика. Мы считаем каждую копейку.</p>
+                </div>
+                <div class="bg-slate-950/90 p-8 hover:bg-slate-900 transition-colors group backdrop-blur-sm">
+                    <iconify-icon icon="solar:wallet-money-linear" class="text-3xl text-accent-400 mb-4"></iconify-icon>
+                    <h3 class="text-lg text-white font-medium mb-2">Финансовый учет</h3>
+                    <p class="text-sm text-slate-400">P&amp;L отчеты, контроль маржинальности и управление денежными потоками.</p>
+                </div>
+                <div class="bg-slate-950/90 p-8 hover:bg-slate-900 transition-colors group backdrop-blur-sm">
+                    <iconify-icon icon="solar:volume-loud-linear" class="text-3xl text-accent-400 mb-4"></iconify-icon>
+                    <h3 class="text-lg text-white font-medium mb-2">Реклама и PROMO</h3>
+                    <p class="text-sm text-slate-400">Настройка внутренней рекламы, внешние интеграции и участие в акциях.</p>
+                </div>
+                <div class="bg-slate-950/90 p-8 hover:bg-slate-900 transition-colors group backdrop-blur-sm">
+                    <iconify-icon icon="solar:magnifer-linear" class="text-3xl text-accent-400 mb-4"></iconify-icon>
+                    <h3 class="text-lg text-white font-medium mb-2">SEO Оптимизация</h3>
+                    <p class="text-sm text-slate-400">Сбор семантики, оптимизация карточек для попадания в максимальное число категорий.</p>
+                </div>
+                <div class="bg-slate-950/90 p-8 hover:bg-slate-900 transition-colors group backdrop-blur-sm">
+                    <iconify-icon icon="solar:palette-linear" class="text-3xl text-accent-400 mb-4"></iconify-icon>
+                    <h3 class="text-lg text-white font-medium mb-2">Дизайн и Контент</h3>
+                    <p class="text-sm text-slate-400">Создание продающей инфографики и rich-контента, повышающего CTR.</p>
+                </div>
+                <div class="bg-slate-950/90 p-8 hover:bg-slate-900 transition-colors group backdrop-blur-sm">
+                    <iconify-icon icon="solar:server-square-linear" class="text-3xl text-accent-400 mb-4"></iconify-icon>
+                    <h3 class="text-lg text-white font-medium mb-2">Техническая часть</h3>
+                    <p class="text-sm text-slate-400">Работа с API, интеграция с 1С/МойСклад, автоматизация процессов.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="relative z-10 py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-2xl md:text-3xl font-medium text-white tracking-tight mb-16">Этапы работы</h2>
+            
+            <div class="relative">
+                <div class="hidden md:block absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-y-1/2 z-0"></div>
+                
+                <div class="grid md:grid-cols-4 gap-8 relative z-10">
+                    <div class="bg-slate-950 border border-white/10 p-6 rounded-xl relative group hover:border-accent-500/50 transition-colors">
+                        <div class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center text-white font-medium border border-white/10 mb-4 group-hover:bg-accent-500 group-hover:border-accent-400 transition-colors shadow-lg shadow-accent-500/0 group-hover:shadow-accent-500/20">1</div>
+                        <h4 class="text-white font-medium mb-2">Встреча</h4>
+                        <p class="text-xs text-slate-400">Знакомство с брендом, определение целей и точек роста.</p>
+                    </div>
+                    <div class="bg-slate-950 border border-white/10 p-6 rounded-xl relative group hover:border-accent-500/50 transition-colors">
+                        <div class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center text-white font-medium border border-white/10 mb-4 group-hover:bg-accent-500 group-hover:border-accent-400 transition-colors shadow-lg shadow-accent-500/0 group-hover:shadow-accent-500/20">2</div>
+                        <h4 class="text-white font-medium mb-2">Аудит</h4>
+                        <p class="text-xs text-slate-400">Глубокий анализ текущей ситуации и разработка стратегии.</p>
+                    </div>
+                    <div class="bg-slate-950 border border-white/10 p-6 rounded-xl relative group hover:border-accent-500/50 transition-colors">
+                        <div class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center text-white font-medium border border-white/10 mb-4 group-hover:bg-accent-500 group-hover:border-accent-400 transition-colors shadow-lg shadow-accent-500/0 group-hover:shadow-accent-500/20">3</div>
+                        <h4 class="text-white font-medium mb-2">Пилот</h4>
+                        <p class="text-xs text-slate-400">Запуск первых гипотез, оптимизация контента, старт рекламы.</p>
+                    </div>
+                    <div class="bg-slate-950 border border-white/10 p-6 rounded-xl relative group hover:border-accent-500/50 transition-colors">
+                        <div class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center text-white font-medium border border-white/10 mb-4 group-hover:bg-accent-500 group-hover:border-accent-400 transition-colors shadow-lg shadow-accent-500/0 group-hover:shadow-accent-500/20">4</div>
+                        <h4 class="text-white font-medium mb-2">Масштаб</h4>
+                        <p class="text-xs text-slate-400">Ежемесячное сопровождение, масштабирование результата.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative z-10 py-20 px-6 bg-white/5">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-2xl md:text-3xl font-medium text-white tracking-tight mb-12">Почему Moolah?</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="flex flex-col gap-4">
+                    <iconify-icon icon="solar:shield-check-linear" class="text-3xl text-accent-400"></iconify-icon>
+                    <div>
+                        <h4 class="text-white font-medium mb-1">Прозрачность</h4>
+                        <p class="text-xs text-slate-400">Полный доступ к кабинетам и отчетам 24/7.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <iconify-icon icon="solar:users-group-rounded-linear" class="text-3xl text-accent-400"></iconify-icon>
+                    <div>
+                        <h4 class="text-white font-medium mb-1">Команда профи</h4>
+                        <p class="text-xs text-slate-400">Над проектом работают 5 узких специалистов.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <iconify-icon icon="solar:graph-up-linear" class="text-3xl text-accent-400"></iconify-icon>
+                    <div>
+                        <h4 class="text-white font-medium mb-1">Фокус на прибыль</h4>
+                        <p class="text-xs text-slate-400">KPI привязаны к вашей чистой прибыли, а не к обороту.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <iconify-icon icon="solar:clock-circle-linear" class="text-3xl text-accent-400"></iconify-icon>
+                    <div>
+                        <h4 class="text-white font-medium mb-1">Скорость</h4>
+                        <p class="text-xs text-slate-400">Быстро внедряем изменения алгоритмов площадок.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative z-10 py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center justify-between mb-12">
+                <h2 class="text-2xl md:text-3xl font-medium text-white tracking-tight">Отзывы партнеров</h2>
+                <div class="flex gap-2">
+                    <button id="prevBtn" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-white/10 transition-colors">
+                        <iconify-icon icon="solar:arrow-left-linear"></iconify-icon>
+                    </button>
+                    <button id="nextBtn" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-white/10 transition-colors">
+                        <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="slider-container">
+                <div class="slider-track" id="sliderTrack">
+                    <div class="slide-item bg-slate-900/50 p-6 rounded-2xl border border-white/5 backdrop-blur-sm">
+                        <div class="flex gap-1 text-accent-400 mb-4">
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                        </div>
+                        <p class="text-sm text-slate-300 mb-6 leading-relaxed">"С Moolah мы наконец-то поняли нашу реальную юнит-экономику. Выручка выросла, но главное — мы перестали торговать в минус."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center text-xs text-white">А</div>
+                            <div>
+                                <div class="text-sm text-white font-medium">Алексей В.</div>
+                                <div class="text-xs text-slate-500">Бренд одежды</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-item bg-slate-900/50 p-6 rounded-2xl border border-white/5 backdrop-blur-sm">
+                        <div class="flex gap-1 text-accent-400 mb-4">
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                        </div>
+                        <p class="text-sm text-slate-300 mb-6 leading-relaxed">"Отличная работа с контентом. Новые фото и SEO описание подняли конверсию в корзину на 30% за первый месяц. Рекомендую."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center text-xs text-white">М</div>
+                            <div>
+                                <div class="text-sm text-white font-medium">Мария С.</div>
+                                <div class="text-xs text-slate-500">Товары для кухни</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-item bg-slate-900/50 p-6 rounded-2xl border border-white/5 backdrop-blur-sm">
+                        <div class="flex gap-1 text-accent-400 mb-4">
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                        </div>
+                        <p class="text-sm text-slate-300 mb-6 leading-relaxed">"Профессиональный подход к рекламе. Снизили ДРР с 15% до 8% при сохранении объемов продаж. Это чистая прибыль в карман."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center text-xs text-white">Д</div>
+                            <div>
+                                <div class="text-sm text-white font-medium">Дмитрий К.</div>
+                                <div class="text-xs text-slate-500">Электроника</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-item bg-slate-900/50 p-6 rounded-2xl border border-white/5 backdrop-blur-sm">
+                        <div class="flex gap-1 text-accent-400 mb-4">
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                        </div>
+                        <p class="text-sm text-slate-300 mb-6 leading-relaxed">"Благодаря команде Moolah мы успешно запустили 20 новых SKU за месяц. Обычно это занимало полгода. Скорость и качество на высоте."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center text-xs text-white">С</div>
+                            <div>
+                                <div class="text-sm text-white font-medium">Сергей П.</div>
+                                <div class="text-xs text-slate-500">Спорттовары</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-item bg-slate-900/50 p-6 rounded-2xl border border-white/5 backdrop-blur-sm">
+                        <div class="flex gap-1 text-accent-400 mb-4">
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                        </div>
+                        <p class="text-sm text-slate-300 mb-6 leading-relaxed">"Полностью делегировала операционку. Теперь занимаюсь только стратегией и развитием продукта, а продажи растут сами."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center text-xs text-white">Е</div>
+                            <div>
+                                <div class="text-sm text-white font-medium">Елена К.</div>
+                                <div class="text-xs text-slate-500">Косметика</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-item bg-slate-900/50 p-6 rounded-2xl border border-white/5 backdrop-blur-sm">
+                        <div class="flex gap-1 text-accent-400 mb-4">
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                        </div>
+                        <p class="text-sm text-slate-300 mb-6 leading-relaxed">"Очень сильная аналитика. Нашли дыры в бюджете, о которых мы даже не подозревали. Оптимизация расходов окупила услуги в первый же месяц."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center text-xs text-white">И</div>
+                            <div>
+                                <div class="text-sm text-white font-medium">Игорь М.</div>
+                                <div class="text-xs text-slate-500">Автотовары</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-item bg-slate-900/50 p-6 rounded-2xl border border-white/5 backdrop-blur-sm">
+                        <div class="flex gap-1 text-accent-400 mb-4">
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                        </div>
+                        <p class="text-sm text-slate-300 mb-6 leading-relaxed">"Креативы, которые они делают — это просто космос. CTR вырос в 2 раза, карточки выглядят намного дороже конкурентов."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center text-xs text-white">О</div>
+                            <div>
+                                <div class="text-sm text-white font-medium">Ольга Т.</div>
+                                <div class="text-xs text-slate-500">Детские игрушки</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="relative z-10 py-20 px-6 max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-medium text-white tracking-tight mb-10 text-center">Частые вопросы</h2>
+        <div class="space-y-4">
+            <details class="group bg-slate-900/40 border border-white/10 rounded-xl overflow-hidden [&amp;_summary::-webkit-details-marker]:hidden">
+                <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-white hover:bg-white/5 transition-colors">
+                    <h3 class="font-medium text-sm">Сколько стоят ваши услуги?</h3>
+                    <iconify-icon icon="solar:alt-arrow-down-linear" class="text-slate-400 transition group-open:rotate-180"></iconify-icon>
+                </summary>
+                <div class="px-6 pb-6 text-sm text-slate-400 leading-relaxed">
+                    Работаем по модели разделённого успеха: небольшая фиксированная часть + процент от роста вашей прибыли. Никаких рисков с вашей стороны.
+                </div>
+            </details>
+            <details class="group bg-slate-900/40 border border-white/10 rounded-xl overflow-hidden [&amp;_summary::-webkit-details-marker]:hidden">
+                <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-white hover:bg-white/5 transition-colors">
+                    <h3 class="font-medium text-sm">С какими площадками вы работаете?</h3>
+                    <iconify-icon icon="solar:alt-arrow-down-linear" class="text-slate-400 transition group-open:rotate-180"></iconify-icon>
+                </summary>
+                <div class="px-6 pb-6 text-sm text-slate-400 leading-relaxed">
+                    Основной фокус — Wildberries и Ozon. Также имеем опыт работы с Яндекс.Маркет и Мегамаркет.
+                </div>
+            </details>
+            <details class="group bg-slate-900/40 border border-white/10 rounded-xl overflow-hidden [&amp;_summary::-webkit-details-marker]:hidden">
+                <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-white hover:bg-white/5 transition-colors">
+                    <h3 class="font-medium text-sm">Даете ли вы гарантии?</h3>
+                    <iconify-icon icon="solar:alt-arrow-down-linear" class="text-slate-400 transition group-open:rotate-180"></iconify-icon>
+                </summary>
+                <div class="px-6 pb-6 text-sm text-slate-400 leading-relaxed">
+                    Мы гарантируем качественное выполнение всех работ. Результат в продажах зависит от рынка и продукта, но наши кейсы показывают, что мы умеем достигать целей.
+                </div>
+            </details>
+             <details class="group bg-slate-900/40 border border-white/10 rounded-xl overflow-hidden [&amp;_summary::-webkit-details-marker]:hidden">
+                <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-white hover:bg-white/5 transition-colors">
+                    <h3 class="font-medium text-sm">Нужно ли предоставлять доступ к кабинету?</h3>
+                    <iconify-icon icon="solar:alt-arrow-down-linear" class="text-slate-400 transition group-open:rotate-180"></iconify-icon>
+                </summary>
+                <div class="px-6 pb-6 text-sm text-slate-400 leading-relaxed">
+                    Да, для аудита и дальнейшей работы нам потребуется доступ по API или гостевой доступ в кабинет селлера.
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <section id="contact" class="relative z-10 py-20 px-6">
+        <div class="max-w-4xl mx-auto bg-gradient-to-br from-slate-900 to-slate-950 border border-white/10 rounded-3xl p-8 md:p-12 relative overflow-hidden group">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-accent-500/10 rounded-full blur-[80px] pointer-events-none group-hover:bg-accent-500/20 transition-colors duration-700"></div>
+
+            <div class="grid md:grid-cols-2 gap-12 relative z-10">
+                <div>
+                    <h2 class="text-3xl font-medium text-white tracking-tight mb-4">Начните рост сегодня</h2>
+                    <p class="text-slate-400 text-sm mb-8 leading-relaxed">Оставьте заявку на бесплатный аудит вашего магазина. Мы свяжемся в течение 30 минут.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3 text-sm text-slate-300">
+                            <iconify-icon icon="solar:phone-calling-linear" class="text-accent-400 text-lg"></iconify-icon>
+                            +7 (999) 000-00-00
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-slate-300">
+                            <iconify-icon icon="solar:letter-linear" class="text-accent-400 text-lg"></iconify-icon>
+                            hello@moolah.agency
+                        </div>
+                    </div>
+                </div>
+
+                <form class="space-y-4">
+                    <div>
+                        <input type="text" placeholder="Ваше имя" class="w-full bg-slate-950 border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-600 focus:border-accent-500 transition-colors">
+                    </div>
+                    <div>
+                        <input type="tel" placeholder="Телефон" class="w-full bg-slate-950 border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-600 focus:border-accent-500 transition-colors">
+                    </div>
+                    <div>
+                        <input type="email" placeholder="Email" class="w-full bg-slate-950 border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-600 focus:border-accent-500 transition-colors">
+                    </div>
+                    <div>
+                        <input type="url" placeholder="Ссылка на ваш магазин или товар на WB/Ozon" class="w-full bg-slate-950 border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-600 focus:border-accent-500 transition-colors">
+                        <p class="text-xs text-slate-500 mt-1">
+                        Например: wildberries.ru/seller/123 или ozon.ru/product/name
+                        </p>
+                    </div>
+                    <button type="button" class="w-full bg-accent-500 hover:bg-accent-400 text-slate-950 font-medium py-3 rounded-lg transition-colors flex items-center justify-center gap-2 mt-2 group">
+                        Отправить заявку
+                        <iconify-icon icon="solar:plain-2-linear" class="group-hover:translate-x-1 transition-transform"></iconify-icon>
+                    </button>
+                    <p class="text-[10px] text-slate-600 text-center">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="relative z-10 border-t border-white/5 bg-slate-950 py-12 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <iconify-icon icon="solar:molecular-bond-linear" class="text-accent-400 text-xl"></iconify-icon>
+                <span class="text-white font-medium tracking-tight">MOOLAH</span>
+            </div>
+            
+            <div class="flex gap-6 text-sm text-slate-500">
+                <a href="#" class="hover:text-white transition-colors">Услуги</a>
+                <a href="#" class="hover:text-white transition-colors">Кейсы</a>
+                <a href="#" class="hover:text-white transition-colors">Политика</a>
+            </div>
+
+            <div class="flex gap-4">
+                <a href="#" class="text-slate-500 hover:text-white transition-colors">
+                    <iconify-icon icon="brandico:telegram-plane" width="20"></iconify-icon>
+                </a>
+                <a href="#" class="text-slate-500 hover:text-white transition-colors">
+                    <iconify-icon icon="brandico:whatsapp" width="20"></iconify-icon>
+                </a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-8 text-center md:text-left text-[10px] text-slate-700">
+            © 2026 Moolah Agency. Все права защищены.
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const track = document.getElementById('sliderTrack');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const slides = document.querySelectorAll('.slide-item');
+            
+            let currentIndex = 0;
+            
+            function getSlidesToShow() {
+                if (window.innerWidth >= 1024) return 3;
+                if (window.innerWidth >= 768) return 2;
+                return 1;
+            }
+
+            function updateSlider() {
+                const slidesToShow = getSlidesToShow();
+                const itemWidth = slides[0].offsetWidth;
+                const gap = 24;
+                const moveAmount = (itemWidth + gap) * currentIndex;
+                
+                track.style.transform = `translateX(-${moveAmount}px)`;
+                
+                // Button states
+                prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
+                prevBtn.disabled = currentIndex === 0;
+                
+                const maxIndex = slides.length - slidesToShow;
+                nextBtn.style.opacity = currentIndex >= maxIndex ? '0.5' : '1';
+                nextBtn.disabled = currentIndex >= maxIndex;
+            }
+
+            nextBtn.addEventListener('click', () => {
+                const slidesToShow = getSlidesToShow();
+                if (currentIndex < slides.length - slidesToShow) {
+                    currentIndex++;
+                    updateSlider();
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateSlider();
+                }
+            });
+
+            window.addEventListener('resize', () => {
+                currentIndex = 0; 
+                updateSlider();
+            });
+
+            // Init
+            updateSlider();
+        });
+    </script>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form');
+    const nameInput = form.querySelector('input[type="text"]');
+    const phoneInput = form.querySelector('input[type="tel"]');
+    const emailInput = form.querySelector('input[type="email"]');
+    const urlInput = form.querySelector('input[type="url"]');
+    const submitButton = form.querySelector('button[type="button"]');
+
+    // Регулярные выражения для валидации
+    const phoneRegex = /^(\+7|8)\d{10}$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const marketplaceRegex = /^(https?:\/\/)?(www\.)?(wildberries|ozon)\.ru\/(seller|product|catalog)\/.+$/;
+
+    // Функция показа ошибки
+    function showError(input, message) {
+        // Удаляем старую ошибку если есть
+        const existingError = input.parentElement.querySelector('.error-message');
+        if (existingError) {
+            existingError.remove();
+        }
+
+        // Добавляем красную рамку
+        input.classList.add('border-red-500');
+        input.classList.remove('border-white/10');
+
+        // Создаем элемент ошибки
+        const errorDiv = document.createElement('p');
+        errorDiv.className = 'error-message text-xs text-red-500 mt-1';
+        errorDiv.textContent = message;
+        input.parentElement.appendChild(errorDiv);
+    }
+
+    // Функция удаления ошибки
+    function clearError(input) {
+        const errorDiv = input.parentElement.querySelector('.error-message');
+        if (errorDiv) {
+            errorDiv.remove();
+        }
+        input.classList.remove('border-red-500');
+        input.classList.add('border-white/10');
+    }
+
+    // Валидация имени
+    function validateName(value) {
+        if (!value.trim()) {
+            return 'Введите ваше имя';
+        }
+        if (value.trim().length < 2) {
+            return 'Имя должно содержать минимум 2 символа';
+        }
+        return null;
+    }
+
+    // Валидация телефона
+    function validatePhone(value) {
+        const cleaned = value.replace(/[\s\-\(\)]/g, ''); // убираем пробелы и символы
+        
+        if (!cleaned) {
+            return 'Введите номер телефона';
+        }
+        if (!phoneRegex.test(cleaned)) {
+            return 'Неверный формат. Используйте +7XXXXXXXXXX или 8XXXXXXXXXX';
+        }
+        return null;
+    }
+
+    // Валидация email
+    function validateEmail(value) {
+        if (!value.trim()) {
+            return 'Введите email';
+        }
+        if (!emailRegex.test(value)) {
+            return 'Неверный формат email';
+        }
+        return null;
+    }
+
+    // Валидация ссылки на маркетплейс
+    function validateMarketplaceUrl(value) {
+        if (!value.trim()) {
+            return 'Введите ссылку на магазин или товар';
+        }
+        if (!marketplaceRegex.test(value)) {
+            return 'Неверная ссылка. Используйте ссылку с Wildberries или Ozon';
+        }
+        return null;
+    }
+
+    // Очистка ошибок при вводе
+    [nameInput, phoneInput, emailInput, urlInput].forEach(input => {
+        input.addEventListener('input', function() {
+            clearError(this);
+        });
+    });
+
+    // Обработка отправки формы
+    submitButton.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        // Очищаем все предыдущие ошибки
+        [nameInput, phoneInput, emailInput, urlInput].forEach(clearError);
+
+        // Валидация всех полей
+        const nameError = validateName(nameInput.value);
+        const phoneError = validatePhone(phoneInput.value);
+        const emailError = validateEmail(emailInput.value);
+        const urlError = validateMarketplaceUrl(urlInput.value);
+
+        // Показываем ошибки если есть
+        let hasErrors = false;
+        
+        if (nameError) {
+            showError(nameInput, nameError);
+            hasErrors = true;
+        }
+        if (phoneError) {
+            showError(phoneInput, phoneError);
+            hasErrors = true;
+        }
+        if (emailError) {
+            showError(emailInput, emailError);
+            hasErrors = true;
+        }
+        if (urlError) {
+            showError(urlInput, urlError);
+            hasErrors = true;
+        }
+
+        // Если есть ошибки - не отправляем
+        if (hasErrors) {
+            return;
+        }
+
+        // Валидация прошла успешно - показываем сообщение
+        showSuccessModal();
+
+        // Очищаем форму
+        form.reset();
+    });
+
+    // Функция показа модального окна успеха
+    function showSuccessModal() {
+        // Создаем оверлей
+        const overlay = document.createElement('div');
+        overlay.className = 'fixed inset-0 bg-black/70 flex items-center justify-center z-50';
+        overlay.style.animation = 'fadeIn 0.3s ease-out';
+
+        // Создаем модальное окно
+        const modal = document.createElement('div');
+        modal.className = 'bg-slate-900 border border-accent-500/30 rounded-2xl p-8 max-w-md mx-4 text-center';
+        modal.style.animation = 'slideUp 0.3s ease-out';
+
+        modal.innerHTML = `
+            <div class="mb-4">
+                <svg class="w-16 h-16 mx-auto text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-3">Заявка отправлена!</h3>
+            <p class="text-slate-400 mb-6">Наши специалисты скоро с вами свяжутся</p>
+            <button class="bg-accent-500 hover:bg-accent-400 text-slate-950 font-medium px-6 py-3 rounded-lg transition-colors">
+                Отлично
+            </button>
+        `;
+
+        overlay.appendChild(modal);
+        document.body.appendChild(overlay);
+
+        // Закрытие модального окна
+        const closeButton = modal.querySelector('button');
+        closeButton.addEventListener('click', function() {
+            overlay.style.animation = 'fadeOut 0.3s ease-out';
+            setTimeout(() => overlay.remove(), 300);
+        });
+
+        // Закрытие по клику на оверлей
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) {
+                overlay.style.animation = 'fadeOut 0.3s ease-out';
+                setTimeout(() => overlay.remove(), 300);
+            }
+        });
+    }
+});
+</script>
+
+<style>
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes slideUp {
+    from { 
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
+
+</body>
+</html>
