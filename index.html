@@ -841,44 +841,232 @@ document.addEventListener('DOMContentLoaded', function() {
     </section>
 
 
-    <section id="services" class="relative z-10 py-20 px-6">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-2xl md:text-3xl font-medium text-white tracking-tight mb-12 text-center">Комплексный подход</h2>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
-                <div class="bg-slate-950/90 p-8 hover:bg-slate-900 transition-colors group backdrop-blur-sm">
-                    <iconify-icon icon="solar:pie-chart-2-linear" class="text-3xl text-accent-400 mb-4"></iconify-icon>
-                    <h3 class="text-lg text-white font-medium mb-2">Глубокая аналитика</h3>
-                    <p class="text-sm text-slate-400">Анализ ниши, конкурентов и Unit-экономика. Мы считаем каждую копейку.</p>
+  <section id="services" class="relative z-10 py-20 px-6">
+    <div class="max-w-7xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-medium text-white tracking-tight mb-12 text-center">Комплексный подход</h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10 rounded-2xl isolate">
+
+            <!-- 1. Глубокая аналитика (Объединил Внутреннюю и Внешнюю) -->
+            <div class="bg-slate-950/90 p-8 hover:bg-slate-900 transition-colors group backdrop-blur-sm relative hover:z-50 rounded-t-2xl lg:rounded-tr-none lg:rounded-l-2xl">
+                <div class="flex items-center justify-between mb-4">
+                    <iconify-icon icon="solar:pie-chart-2-linear" class="text-3xl text-accent-400"></iconify-icon>
+
+                    <div class="info-trigger relative">
+                        <div class="w-6 h-6 rounded-full border-2 border-slate-600 flex items-center justify-center text-slate-400 text-xs cursor-help hover:border-accent-400 hover:text-accent-400 transition-colors bg-slate-950">i</div>
+
+                        <div class="info-tooltip absolute right-0 top-10 w-72 bg-slate-800 border border-white/10 rounded-xl p-5 opacity-0 invisible transition-all duration-200 shadow-2xl backdrop-blur-md pointer-events-none group-hover:pointer-events-auto">
+                            <div class="absolute -top-1.5 right-2 w-3 h-3 bg-slate-800 border-t border-l border-white/10 transform rotate-45"></div>
+                            <ul class="text-xs text-slate-300 space-y-2">
+                                <li class="flex items-start gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-accent-400 mt-1 flex-shrink-0"></span>
+                                    <span>Аудит ниши и целесообразности входа</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-accent-400 mt-1 flex-shrink-0"></span>
+                                    <span>Сравнение цен и спроса конкурентов</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-accent-400 mt-1 flex-shrink-0"></span>
+                                    <span>ABC/XYZ анализ и оборачиваемость</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-accent-400 mt-1 flex-shrink-0"></span>
+                                    <span>Точное планирование закупок</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-slate-950/90 p-8 hover:bg-slate-900 transition-colors group backdrop-blur-sm">
-                    <iconify-icon icon="solar:wallet-money-linear" class="text-3xl text-accent-400 mb-4"></iconify-icon>
-                    <h3 class="text-lg text-white font-medium mb-2">Финансовый учет</h3>
-                    <p class="text-sm text-slate-400">P&amp;L отчеты, контроль маржинальности и управление денежными потоками.</p>
-                </div>
-                <div class="bg-slate-950/90 p-8 hover:bg-slate-900 transition-colors group backdrop-blur-sm">
-                    <iconify-icon icon="solar:volume-loud-linear" class="text-3xl text-accent-400 mb-4"></iconify-icon>
-                    <h3 class="text-lg text-white font-medium mb-2">Реклама и PROMO</h3>
-                    <p class="text-sm text-slate-400">Настройка внутренней рекламы, внешние интеграции и участие в акциях.</p>
-                </div>
-                <div class="bg-slate-950/90 p-8 hover:bg-slate-900 transition-colors group backdrop-blur-sm">
-                    <iconify-icon icon="solar:magnifer-linear" class="text-3xl text-accent-400 mb-4"></iconify-icon>
-                    <h3 class="text-lg text-white font-medium mb-2">SEO Оптимизация</h3>
-                    <p class="text-sm text-slate-400">Сбор семантики, оптимизация карточек для попадания в максимальное число категорий.</p>
-                </div>
-                <div class="bg-slate-950/90 p-8 hover:bg-slate-900 transition-colors group backdrop-blur-sm">
-                    <iconify-icon icon="solar:palette-linear" class="text-3xl text-accent-400 mb-4"></iconify-icon>
-                    <h3 class="text-lg text-white font-medium mb-2">Дизайн и Контент</h3>
-                    <p class="text-sm text-slate-400">Создание продающей инфографики и rich-контента, повышающего CTR.</p>
-                </div>
-                <div class="bg-slate-950/90 p-8 hover:bg-slate-900 transition-colors group backdrop-blur-sm">
-                    <iconify-icon icon="solar:server-square-linear" class="text-3xl text-accent-400 mb-4"></iconify-icon>
-                    <h3 class="text-lg text-white font-medium mb-2">Техническая часть</h3>
-                    <p class="text-sm text-slate-400">Работа с API, интеграция с 1С/МойСклад, автоматизация процессов.</p>
-                </div>
+                <h3 class="text-lg text-white font-medium mb-2">Экспертная аналитика</h3>
+                <p class="text-sm text-slate-400">Считаем емкость рынка и эффективность проекта до старта. Вы точно знаете, где лежат деньги.</p>
             </div>
+
+            <!-- 2. Финансы -->
+            <div class="bg-slate-950/90 p-8 hover:bg-slate-900 transition-colors group backdrop-blur-sm relative hover:z-50">
+                <div class="flex items-center justify-between mb-4">
+                    <iconify-icon icon="solar:wallet-money-linear" class="text-3xl text-accent-400"></iconify-icon>
+
+                    <div class="info-trigger relative">
+                        <div class="w-6 h-6 rounded-full border-2 border-slate-600 flex items-center justify-center text-slate-400 text-xs cursor-help hover:border-accent-400 hover:text-accent-400 transition-colors bg-slate-950">i</div>
+
+                        <div class="info-tooltip absolute right-0 top-10 w-72 bg-slate-800 border border-white/10 rounded-xl p-5 opacity-0 invisible transition-all duration-200 shadow-2xl backdrop-blur-md pointer-events-none group-hover:pointer-events-auto">
+                            <div class="absolute -top-1.5 right-2 w-3 h-3 bg-slate-800 border-t border-l border-white/10 transform rotate-45"></div>
+                            <ul class="text-xs text-slate-300 space-y-2">
+                                <li class="flex items-start gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-accent-400 mt-1 flex-shrink-0"></span>
+                                    <span>Детальная Unit-экономика</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-accent-400 mt-1 flex-shrink-0"></span>
+                                    <span>P&L отчеты и управление потоками</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-accent-400 mt-1 flex-shrink-0"></span>
+                                    <span>Ежедневные дашборды доходности</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-accent-400 mt-1 flex-shrink-0"></span>
+                                    <span>План-фактный анализ месяца</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="text-lg text-white font-medium mb-2">Финансовый контроль</h3>
+                <p class="text-sm text-slate-400">Управляем маржинальностью каждого артикула. Вы видите чистую прибыль, а не просто "оборот".</p>
+            </div>
+
+            <!-- 3. Продвижение -->
+            <div class="bg-slate-950/90 p-8 hover:bg-slate-900 transition-colors group backdrop-blur-sm relative hover:z-50 lg:rounded-tr-2xl">
+                <div class="flex items-center justify-between mb-4">
+                    <iconify-icon icon="solar:volume-loud-linear" class="text-3xl text-accent-400"></iconify-icon>
+
+                    <div class="info-trigger relative">
+                        <div class="w-6 h-6 rounded-full border-2 border-slate-600 flex items-center justify-center text-slate-400 text-xs cursor-help hover:border-accent-400 hover:text-accent-400 transition-colors bg-slate-950">i</div>
+
+                        <div class="info-tooltip absolute right-0 top-10 w-72 bg-slate-800 border border-white/10 rounded-xl p-5 opacity-0 invisible transition-all duration-200 shadow-2xl backdrop-blur-md pointer-events-none group-hover:pointer-events-auto">
+                            <div class="absolute -top-1.5 right-2 w-3 h-3 bg-slate-800 border-t border-l border-white/10 transform rotate-45"></div>
+                            <ul class="text-xs text-slate-300 space-y-2">
+                                <li class="flex items-start gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-accent-400 mt-1 flex-shrink-0"></span>
+                                    <span>АРК и Поиск: масштабирование продаж</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-accent-400 mt-1 flex-shrink-0"></span>
+                                    <span>Рост конверсии в покупку (CR)</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-accent-400 mt-1 flex-shrink-0"></span>
+                                    <span>Факторный анализ метрик</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-accent-400 mt-1 flex-shrink-0"></span>
+                                    <span>Ответственность за результат</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="text-lg text-white font-medium mb-2">Продвижение и Реклама</h3>
+                <p class="text-sm text-slate-400">Снижаем ДРР, увеличиваем заказы. Грамотная настройка кампаний и работа на результат.</p>
+            </div>
+
+            <!-- 4. SEO -->
+            <div class="bg-slate-950/90 p-8 hover:bg-slate-900 transition-colors group backdrop-blur-sm relative hover:z-50 lg:rounded-bl-2xl">
+                <div class="flex items-center justify-between mb-4">
+                    <iconify-icon icon="solar:magnifer-linear" class="text-3xl text-accent-400"></iconify-icon>
+
+                    <div class="info-trigger relative">
+                        <div class="w-6 h-6 rounded-full border-2 border-slate-600 flex items-center justify-center text-slate-400 text-xs cursor-help hover:border-accent-400 hover:text-accent-400 transition-colors bg-slate-950">i</div>
+
+                        <div class="info-tooltip absolute right-0 top-10 w-72 bg-slate-800 border border-white/10 rounded-xl p-5 opacity-0 invisible transition-all duration-200 shadow-2xl backdrop-blur-md pointer-events-none group-hover:pointer-events-auto">
+                            <div class="absolute -top-1.5 right-2 w-3 h-3 bg-slate-800 border-t border-l border-white/10 transform rotate-45"></div>
+                            <ul class="text-xs text-slate-300 space-y-2">
+                                <li class="flex items-start gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-accent-400 mt-1 flex-shrink-0"></span>
+                                    <span>Сбор полного семантического ядра</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-accent-400 mt-1 flex-shrink-0"></span>
+                                    <span>Максимальный органический охват</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-accent-400 mt-1 flex-shrink-0"></span>
+                                    <span>Вывод карточек в ТОП</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-accent-400 mt-1 flex-shrink-0"></span>
+                                    <span>Проработка заголовков и атрибутов</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="text-lg text-white font-medium mb-2">SEO Оптимизация</h3>
+                <p class="text-sm text-slate-400">Получаем бесплатный трафик. Оптимизируем карточки для попадания в максимальное число категорий.</p>
+            </div>
+
+            <!-- 5. Дизайн -->
+            <div class="bg-slate-950/90 p-8 hover:bg-slate-900 transition-colors group backdrop-blur-sm relative hover:z-50">
+                <div class="flex items-center justify-between mb-4">
+                    <iconify-icon icon="solar:palette-linear" class="text-3xl text-accent-400"></iconify-icon>
+
+                    <div class="info-trigger relative">
+                        <div class="w-6 h-6 rounded-full border-2 border-slate-600 flex items-center justify-center text-slate-400 text-xs cursor-help hover:border-accent-400 hover:text-accent-400 transition-colors bg-slate-950">i</div>
+
+                        <div class="info-tooltip absolute right-0 top-10 w-72 bg-slate-800 border border-white/10 rounded-xl p-5 opacity-0 invisible transition-all duration-200 shadow-2xl backdrop-blur-md pointer-events-none group-hover:pointer-events-auto">
+                            <div class="absolute -top-1.5 right-2 w-3 h-3 bg-slate-800 border-t border-l border-white/10 transform rotate-45"></div>
+                            <ul class="text-xs text-slate-300 space-y-2">
+                                <li class="flex items-start gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-accent-400 mt-1 flex-shrink-0"></span>
+                                    <span>Продающая инфографика (высокий CTR)</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-accent-400 mt-1 flex-shrink-0"></span>
+                                    <span>Разработка УТП и Hero Image</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-accent-400 mt-1 flex-shrink-0"></span>
+                                    <span>Rich-контент и видеообложки</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-accent-400 mt-1 flex-shrink-0"></span>
+                                    <span>Адаптация бренд-контента</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="text-lg text-white font-medium mb-2">Продающий Дизайн</h3>
+                <p class="text-sm text-slate-400">Создаем визуал, который выделяет вас среди конкурентов и закрывает потребности клиента.</p>
+            </div>
+
+            <!-- 6. Фото/Видео (Вместо Технической части, так как босс выделил это отдельно) -->
+            <div class="bg-slate-950/90 p-8 hover:bg-slate-900 transition-colors group backdrop-blur-sm relative hover:z-50 rounded-b-2xl lg:rounded-bl-none lg:rounded-br-2xl">
+                <div class="flex items-center justify-between mb-4">
+                    <iconify-icon icon="solar:camera-linear" class="text-3xl text-accent-400"></iconify-icon>
+
+                    <div class="info-trigger relative">
+                        <div class="w-6 h-6 rounded-full border-2 border-slate-600 flex items-center justify-center text-slate-400 text-xs cursor-help hover:border-accent-400 hover:text-accent-400 transition-colors bg-slate-950">i</div>
+
+                        <div class="info-tooltip absolute right-0 top-10 w-72 bg-slate-800 border border-white/10 rounded-xl p-5 opacity-0 invisible transition-all duration-200 shadow-2xl backdrop-blur-md pointer-events-none group-hover:pointer-events-auto">
+                            <div class="absolute -top-1.5 right-2 w-3 h-3 bg-slate-800 border-t border-l border-white/10 transform rotate-45"></div>
+                            <ul class="text-xs text-slate-300 space-y-2">
+                                <li class="flex items-start gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-accent-400 mt-1 flex-shrink-0"></span>
+                                    <span>Собственная студия дизайна</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-accent-400 mt-1 flex-shrink-0"></span>
+                                    <span>Разработка креативных концепций</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-accent-400 mt-1 flex-shrink-0"></span>
+                                    <span>Написание сценариев съемки</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-accent-400 mt-1 flex-shrink-0"></span>
+                                    <span>Покадровое ТЗ для фотографов</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="text-lg text-white font-medium mb-2">Фото/Видео продакшн</h3>
+                <p class="text-sm text-slate-400">Полный цикл производства контента. От сценария и покадрового ТЗ до готовой съемки.</p>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
+
+<style>
+    .info-trigger:hover .info-tooltip {
+        opacity: 1;
+        visibility: visible;
+    }
+</style>
 
     <section id="process" class="relative z-10 py-20 px-6">
         <div class="max-w-7xl mx-auto">
