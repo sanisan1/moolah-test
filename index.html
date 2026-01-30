@@ -38,6 +38,15 @@
         }
     </script>
     <style>
+
+        html, body {
+            max-width: 100vw;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
         /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
@@ -783,7 +792,7 @@
         });
     });
 </script>
-<section id="cases" class="relative z-10 py-24 px-6 bg-slate-900/50 border-y border-white/5">
+<section id="cases" class="relative z-10 py-24 px-6 bg-slate-900/50 border-y border-white/5 overflow-hidden">
     <div class="max-w-7xl mx-auto">
         <div class="flex flex-col md:flex-row justify-between items-end mb-16">
             <div class="max-w-2xl">
