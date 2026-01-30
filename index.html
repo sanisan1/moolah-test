@@ -792,39 +792,40 @@
         });
     });
 </script>
-<section id="cases" class="relative z-10 py-24 px-6 bg-slate-900/50 border-y border-white/5 overflow-hidden">
+<section id="cases" class="relative z-10 py-16 sm:py-24 px-4 sm:px-6 bg-slate-900/50 border-y border-white/5 overflow-x-hidden">
     <div class="max-w-7xl mx-auto">
-        <div class="flex flex-col md:flex-row justify-between items-end mb-16">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 sm:mb-16">
             <div class="max-w-2xl">
-                <h2 class="text-4xl md:text-5xl font-medium text-white tracking-tight mb-4">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white tracking-tight mb-3 sm:mb-4">
                     Результаты в цифрах
                 </h2>
-                <p class="text-slate-400 text-lg">Реальные показатели наших клиентов.</p>
+                <p class="text-slate-400 text-base sm:text-lg">Реальные показатели наших клиентов.</p>
             </div>
         </div>
 
-        <div class="grid lg:grid-cols-2 gap-8">
-
+        <div class="grid lg:grid-cols-2 gap-6 sm:gap-8">
+            <!-- Card 1 -->
             <div class="group relative rounded-3xl p-[1px] bg-gradient-to-b from-accent-500/50 to-white/5 hover:to-accent-500/50 transition-all duration-500">
                 <div class="absolute inset-0 bg-accent-500/20 blur-3xl opacity-0 group-hover:opacity-30 transition-opacity duration-700"></div>
 
-                <div class="relative h-full bg-slate-950 rounded-[23px] p-8 md:p-10 overflow-hidden flex flex-col justify-between">
-                    <div class="absolute top-0 right-0 w-64 h-64 bg-accent-500/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2"></div>
+                <div class="relative h-full bg-slate-950 rounded-[23px] p-6 sm:p-8 md:p-10 overflow-hidden flex flex-col justify-between">
+                    <!-- glow (safe on mobile) -->
+                    <div class="pointer-events-none absolute top-0 right-0 w-40 h-40 sm:w-64 sm:h-64 bg-accent-500/10 rounded-full blur-[60px] sm:blur-[80px] -translate-y-1/2 translate-x-0 sm:translate-x-1/2"></div>
 
                     <div class="relative z-10 mb-8">
-                        <div class="flex justify-between items-start mb-8">
+                        <div class="flex justify-between items-start gap-4 mb-6 sm:mb-8">
                             <div>
                                 <div class="text-xs text-accent-400 font-bold tracking-widest uppercase mb-1">Ниша: Товары для дома</div>
-                                <h3 class="text-2xl text-white font-medium">Масштабирование в сезон</h3>
+                                <h3 class="text-xl sm:text-2xl text-white font-medium">Масштабирование в сезон</h3>
                             </div>
-                            <div class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-accent-500 group-hover:text-slate-950 transition-colors duration-300">
+                            <div class="shrink-0 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-accent-500 group-hover:text-slate-950 transition-colors duration-300">
                                 <iconify-icon icon="solar:rocket-2-bold-duotone" class="text-2xl"></iconify-icon>
                             </div>
                         </div>
 
                         <div>
                             <div class="flex items-baseline gap-2">
-                                <span class="text-7xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-emerald-600 tracking-tighter">x16.8</span>
+                                <span class="text-6xl sm:text-7xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-emerald-600 tracking-tighter">x16.8</span>
                             </div>
                             <p class="text-slate-400 mt-2 font-light">
                                 Рост чистой прибыли за 5 недель.<br>
@@ -833,13 +834,13 @@
                         </div>
                     </div>
 
-                    <div class="relative z-10 bg-white/5 rounded-xl p-6 border border-white/5 backdrop-blur-sm h-auto sm:h-48 flex flex-col justify-between">
+                    <div class="relative z-10 bg-white/5 rounded-xl p-5 sm:p-6 border border-white/5 backdrop-blur-sm">
                         <div class="flex items-center justify-between text-sm pb-3 border-b border-white/5">
                             <span class="text-slate-500">Показатель</span>
                             <span class="text-slate-500">Результат</span>
                         </div>
 
-                        <div class="flex flex-col justify-center flex-1 gap-4">
+                        <div class="flex flex-col justify-center gap-4 pt-4">
                             <div class="flex items-center justify-between">
                                 <span class="text-slate-300">Было (Старт)</span>
                                 <div class="text-right">
@@ -859,27 +860,29 @@
                 </div>
             </div>
 
+            <!-- Card 2 -->
             <div class="group relative rounded-3xl p-[1px] bg-gradient-to-b from-accent-500/50 to-white/5 hover:to-accent-500/50 transition-all duration-500">
                 <div class="absolute inset-0 bg-accent-500/20 blur-3xl opacity-0 group-hover:opacity-30 transition-opacity duration-700"></div>
 
-                <div class="relative h-full bg-slate-950 rounded-[23px] p-8 md:p-10 overflow-hidden flex flex-col justify-between">
-                    <div class="absolute top-0 right-0 w-64 h-64 bg-accent-500/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2"></div>
+                <div class="relative h-full bg-slate-950 rounded-[23px] p-6 sm:p-8 md:p-10 overflow-hidden flex flex-col justify-between">
+                    <!-- glow (safe on mobile) -->
+                    <div class="pointer-events-none absolute top-0 right-0 w-40 h-40 sm:w-64 sm:h-64 bg-accent-500/10 rounded-full blur-[60px] sm:blur-[80px] -translate-y-1/2 translate-x-0 sm:translate-x-1/2"></div>
 
                     <div class="relative z-10 mb-8">
-                        <div class="flex justify-between items-start mb-8">
+                        <div class="flex justify-between items-start gap-4 mb-6 sm:mb-8">
                             <div>
                                 <div class="text-xs text-accent-400 font-bold tracking-widest uppercase mb-1">Ниша: Текстиль</div>
-                                <h3 class="text-2xl text-white font-medium">Системный доход</h3>
+                                <h3 class="text-xl sm:text-2xl text-white font-medium">Системный доход</h3>
                             </div>
-                            <div class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-accent-500 group-hover:text-slate-950 transition-colors duration-300">
+                            <div class="shrink-0 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-accent-500 group-hover:text-slate-950 transition-colors duration-300">
                                 <iconify-icon icon="solar:chart-square-bold-duotone" class="text-2xl"></iconify-icon>
                             </div>
                         </div>
 
                         <div>
                             <div class="flex items-baseline gap-2">
-                                <span class="text-5xl md:text-6xl font-bold text-white tracking-tighter">~720К</span>
-                                <span class="text-xl text-slate-500 font-medium">/ мес</span>
+                                <span class="text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tighter">~720К</span>
+                                <span class="text-lg sm:text-xl text-slate-500 font-medium">/ мес</span>
                             </div>
                             <div class="inline-flex items-center gap-2 mt-3 px-3 py-1 bg-accent-500/10 text-accent-400 text-xs rounded-full border border-accent-500/20">
                                 <iconify-icon icon="solar:graph-up-linear"></iconify-icon>
@@ -891,13 +894,13 @@
                         </div>
                     </div>
 
-                    <div class="relative z-10 bg-white/5 rounded-xl p-6 border border-white/5 backdrop-blur-sm h-auto sm:h-48 flex flex-col justify-between">
+                    <div class="relative z-10 bg-white/5 rounded-xl p-5 sm:p-6 border border-white/5 backdrop-blur-sm">
                         <div class="flex items-center justify-between text-sm pb-3 border-b border-white/5">
                             <span class="text-slate-500">Динамика</span>
                             <span class="text-slate-500">Прибыль</span>
                         </div>
 
-                        <div class="flex flex-col justify-center flex-1 gap-4">
+                        <div class="flex flex-col justify-center gap-4 pt-4">
                             <div class="flex items-center gap-3">
                                 <span class="text-xs text-slate-400 w-12">Было</span>
                                 <div class="flex-1 h-2 bg-slate-800 rounded-full overflow-hidden">
@@ -918,18 +921,19 @@
             </div>
         </div>
 
-        <div class="flex justify-center mt-16">
-            <a href="case.html" class="group relative inline-flex items-center gap-4 px-8 py-4 bg-slate-900 border border-white/10 rounded-full hover:border-accent-500/50 transition-all duration-300">
-                <span class="relative flex h-3 w-3">
-                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-400 opacity-75"></span>
-                  <span class="relative inline-flex rounded-full h-3 w-3 bg-accent-500"></span>
-                </span>
+        <div class="flex justify-center mt-10 sm:mt-16">
+            <a href="case.html" class="group relative inline-flex items-center gap-3 sm:gap-4 px-6 sm:px-8 py-3.5 sm:py-4 bg-slate-900 border border-white/10 rounded-full hover:border-accent-500/50 transition-all duration-300">
+        <span class="relative flex h-3 w-3">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-3 w-3 bg-accent-500"></span>
+        </span>
                 <span class="text-white font-medium group-hover:text-accent-400 transition-colors">Смотреть подробные разборы кейсов</span>
                 <iconify-icon icon="solar:arrow-right-linear" class="text-slate-400 group-hover:translate-x-1 group-hover:text-accent-400 transition-all"></iconify-icon>
             </a>
         </div>
     </div>
 </section>
+
 
 
 <section class="relative z-10 py-20 px-6">
